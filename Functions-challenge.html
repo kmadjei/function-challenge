@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Required Function Challenge</title>
+</head>
+<body>
+
+<h1>Javascript Function challenge</h1>
+<button onclick="runFunction()">Try it out!</button>
+<p id="deploy"></p>
+
+<script>
+
+	function runFunction() {
+	
+		let choice = 0;
+		
+		if (choice !== 1 || choice !== 2){
+			choice = prompt("What do you want to convert to?\n (1) kg to lb or (2) lb to kg\n Choose a number! ");
+		}
+				
+		function convertKgToLb(){
+			let mass;
+			do {
+				mass = prompt("Numeric weight?");
+			}
+			while (isNaN(mass));
+			//convert
+			let m = mass / 0.454;
+			
+			return document.getElementById("deploy").innerHTML = `${mass} kg is ${m} lb(s)`;
+		}
+		
+		function convertLbToKg(){
+			let mass;
+			do {
+				mass = prompt("Numeric weight?");
+			}
+			while (isNaN(mass)); //Repeats prompt if mass is not numeric
+			//convert
+			let m = mass * 0.454;
+			
+			return document.getElementById("deploy").innerHTML = `${mass} kg is ${m} lb(s)`;
+		}
+		
+		switch(choice) {
+			case "1":
+				convertKgToLb()
+			  break;
+			case "2":
+				convertLbToKg();
+		}
+		
+	}
+	
+</script>
+
+
+	
+</body>
+</html>
