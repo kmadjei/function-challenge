@@ -15,13 +15,14 @@
 
 	function runFunction() {
 	
-		let choice = 0;
-
-		do {
-				choice = prompt("What do you want to convert?\n(1) Convert kg to lb (2) Convert lb to kg; \nNote: Pick a choice!");
-			}
-			while (choice !== 1 || choice !== 2); // Repeats prompt if user picks wrong choice
-			
+		let choice;
+		
+		// Validates user choice
+		if (choice !== 1 || choice !== 2) {
+		 choice = prompt("What do you want to convert?\n(1) Convert kg to lb (2) Convert lb to kg; \nNote: Pick a choice!");
+		} 
+		
+		// Converting Kg to Lb for option 1
 		function convertKgToLb(){
 			let mass;
 			do {
@@ -34,6 +35,7 @@
 			return document.getElementById("deploy").innerHTML = `${mass} kg is ${m} lb(s)`;
 		}
 		
+		//Converting Lb to Kg for option 2
 		function convertLbToKg(){
 			let mass;
 			do {
@@ -44,10 +46,10 @@
 			let m = mass * 0.454;
 			
 			// Literal template results
-			return document.getElementById("deploy").innerHTML = `${mass} kg is ${m} lb(s)`;
+			return document.getElementById("deploy").innerHTML = `${mass} lb(s) is ${m} kg`;
 		}
 		
-		// Switch statements for executing and displaying the chosen conversion 
+		// Switch statements executes the right option chosen 
 		switch(choice) {
 			case "1":
 				convertKgToLb()
