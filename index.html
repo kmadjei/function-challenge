@@ -16,11 +16,12 @@
 	function runFunction() {
 	
 		let choice = 0;
-		
-		if (choice !== 1 || choice !== 2){
-			choice = prompt("What do you want to convert to?\n (1) kg to lb or (2) lb to kg\n Choose a number! ");
-		}
-				
+
+		do {
+				mass = prompt("Numeric weight?");
+			}
+			while (choice !== 1 || choice !== 2); // Repeats prompt if user picks wrong choice
+			
 		function convertKgToLb(){
 			let mass;
 			do {
@@ -46,6 +47,7 @@
 			return document.getElementById("deploy").innerHTML = `${mass} kg is ${m} lb(s)`;
 		}
 		
+		// Switch statements for executing and displaying the chosen conversion 
 		switch(choice) {
 			case "1":
 				convertKgToLb()
